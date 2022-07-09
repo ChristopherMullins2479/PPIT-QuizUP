@@ -5,9 +5,10 @@ class Main extends Component {
         return (
             <div>
                 <h1>Hello World!</h1>
-                <h2>It is {new Date().toLocaleTimeString()}.</h2>
+                <button>info</button>
             </div>
         );
     }
 }
+
 export default Main;
