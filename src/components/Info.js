@@ -7,7 +7,8 @@ class Info extends Component
     render(){
         return(
             <div>
-                <h1>Welcome to Quiz UP</h1>
+                <h1>Welcome to Quizly</h1>
+                <h2>Quizly is a General Knowledge based quiz</h2>
             </div>
         );
     }

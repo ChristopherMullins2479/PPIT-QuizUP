@@ -15,24 +15,24 @@ import {
 } from "react-router-dom";
 import Info from './components/Info';
 import Create from './components/create';
+import logo from './assets/Logo.png'
 
 class App extends Component {
   render() {
     return (
       <Router>
       <div className="App">
-        <Navbar bg="primary" variant="dark">
+        <Navbar bg="primary" variant="light">
           <Container>
-            <Navbar.Brand href="/">Quiz Up</Navbar.Brand>
+            <Navbar.Brand href="/"><img src={logo} alt="Logo"></img></Navbar.Brand>
             <Nav className="me-auto">
-              <Nav.Link href="/">Home</Nav.Link>
+              <Nav.Link href="/">Main</Nav.Link>
               <Nav.Link href="/info">Info</Nav.Link>
             </Nav>
           </Container>
         </Navbar>
         <Switch>
           <Route path="/" exact><Main /></Route>
-          <Route path="/create"><Create></Create></Route>
           <Route path="/info"><Info></Info></Route>
         </Switch>
       </div>

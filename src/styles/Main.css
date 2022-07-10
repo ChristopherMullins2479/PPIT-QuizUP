@@ -1,0 +1,18 @@
+.StartButton{
+    background-color: green;
+    height: 50px;
+    width: 200px;
+    text-align: center;
+    color: white;
+    border-radius: 30%;
+}
+
+.button{
+    background-color: aquamarine;
+    height: 50px;
+    width: 200px;
+    text-align: center;
+    color: white;
+    border-radius: 30%;
+}
+
