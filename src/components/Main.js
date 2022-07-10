@@ -8,16 +8,20 @@ class Main extends Component {
             <div>
                 <img height={100} width={100} src={logo} alt="Logo"></img>
                 <h1>Welcome To Quizly</h1>
-                <div className='block-display'>
+                <div>
                         <button className='StartButton'>Start Quiz</button>
                         <p></p>
                         <button className='button'>Leaderboard</button>
                         <p></p>
-                        <button className='button'>Genre</button>
+                        <button className='button' onClick={genrePressed}>Genre</button>
                 </div>
             </div>
         );
     }
+}
+
+function genrePressed(){
+    alert('You clicked genre!');
 }
 
 export default Main;
