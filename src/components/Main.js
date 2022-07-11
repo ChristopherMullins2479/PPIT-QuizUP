@@ -1,20 +1,25 @@
 import React, { Component } from 'react';
 import logo from '../assets/Logo.png'
+import backGround from '../assets/Quizlybackground.jpg'
 import '../styles/Main.css'
 
 class Main extends Component {
     render() {
         return (
-            <div>
+            <div className='background'>
                 <img height={100} width={100} src={logo} alt="Logo"></img>
-                <h1>Welcome To Quizly</h1>
+                <h1 className='title'>Welcome To Quizly</h1>
                 <div>
-                        <button className='StartButton'>Start Quiz</button>
+                        <button className='startButton'>Start Quiz</button>
                         <p></p>
-                        <button className='button'>Leaderboard</button>
+                        <button className='mainMenueButton'>Leaderboard</button>
                         <p></p>
-                        <button className='button' onClick={genrePressed}>Genre</button>
+                        <button className='mainMenueButton' onClick={genrePressed}>Genre</button>
                 </div>
+                <footer className='footer'>
+                    <p>Arthor: Christopher Mullins</p>
+                    <p>Quizly PPIT</p>
+                </footer>
             </div>
         );
     }

@@ -1,18 +1,43 @@
-.StartButton{
+.startButton{
     background-color: green;
-    height: 50px;
-    width: 200px;
+    height: 150px;
+    width: 500px;
     text-align: center;
     color: white;
     border-radius: 30%;
+    font-size: 75px;
 }
 
-.button{
-    background-color: aquamarine;
-    height: 50px;
-    width: 200px;
+.mainMenueButton{
+    background-color: lightseagreen;
+    height: 150px;
+    width: 500px;
     text-align: center;
     color: white;
     border-radius: 30%;
+    font-size: 75px;
+}
+
+.background{
+    background-image: url(../assets/Quizlybackground.jpg);
+    height: auto;
+    width: auto;
+}
+
+.title{
+    font-family:fantasy;
+    font-size: 75px;
+    color: white;
+    text-align: center;
+    text-shadow: blue;
+}
+
+.footer{
+    background: rgb(44, 44, 221);
+    font-family:fantasy;
+    font-size: 25px;
+    color: white;
+    text-align: center;
+    text-shadow: blue;
 }
 
