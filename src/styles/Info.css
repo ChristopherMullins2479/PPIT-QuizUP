@@ -1,0 +1,17 @@
+.menueButton{
+    background-color: aquamarine;
+    height: 50px;
+    width: 200px;
+    text-align: center;
+    color: white;
+    border-radius: 30%;
+}
+
+.infoPannel{
+    background-color: grey;
+    height: fit-content;
+    width: 1000px;
+    color: white;
+    justify-content: center;
+    text-align: center;
+}
