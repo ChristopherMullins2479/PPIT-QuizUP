@@ -1,29 +1,36 @@
 import React, { Component } from 'react';
 import Movies from './movies';
 import '../styles/Info.css'
+import {useState} from 'react';
+import howToPlayText from '../data/howToPlay.txt'
 
- var infoOutput = "How to Play"
+//const [infoOutput, setInfoOutput] = useState("Tester");
 
-class Info extends Component
+
+function Info() 
 {
-    render(){
+    const [infoOutput, setInfoOutput] = useState("Tester");
+   
         return(
-            <div>
-                <h1>Welcome to Quizly</h1>
-                <h2>Quizly is a General Knowledge based quiz</h2>
+            <div className='background'>
+                <h1 id='tester' className='title'>Welcome to Quizly</h1>
+                <h2 className='title'>Quizly is a General Knowledge based quiz</h2>
                 <div>
-                    <button className='button' onClick={htpPressed}>How to Play</button>
-                    <button className='button' onClick={htpPressed}>About</button>
-                    <button className='button' onClick={htpPressed}>Genres</button>
-                </div>   
+                    <button onClick={() => setInfoOutput("howToPlayText")} className='menueButton'>How to Play</button>
+                    <button onClick={() => setInfoOutput("About")} className='menueButton'>About</button>
+                    <button onClick={() => setInfoOutput("Genre")} className='menueButton'>Genres</button>
+                    <p></p>
+                    <text className='infoPannel'>{infoOutput}</text>
+                </div>  
+                
+                <footer className='footer'>
+                    <p>Arthor: Christopher Mullins</p>
+                </footer> 
             </div>  
         );
-    }
 }
 
 
 function htpPressed(){
-    infoOutput = "Tester";
-    alert('You clicked genre!');
 }
 export default Info;
