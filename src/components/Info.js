@@ -41,7 +41,7 @@ var genreInfo = ("genre ipsum dolor sit amet, consectetur adipiscing elit. Vivam
 
 function Info() 
 {
-    const [infoOutput, setInfoOutput] = useState("Tester");
+    const [infoOutput, setInfoOutput] = useState("Please click on an option");
 
    
         return(
@@ -63,7 +63,4 @@ function Info()
         );
 }
 
-
-function htpPressed(){
-}
 export default Info;
