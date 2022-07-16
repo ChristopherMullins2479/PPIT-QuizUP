@@ -7,7 +7,7 @@ class Main extends Component {
     render() {
         return (
             <div className='background'>
-                <img height={100} width={100} src={logo} alt="Logo"></img>
+                <img height={200} width={200} src={logo} alt="Logo"></img>
                 <h1 className='title'>Welcome To Quizly</h1>
                 <div>
                         <button className='startButton'>Start Quiz</button>

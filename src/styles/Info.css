@@ -4,14 +4,15 @@
     width: 200px;
     text-align: center;
     color: white;
-    border-radius: 30%;
+    border-radius: 20%;
 }
 
 .infoPannel{
-    background-color: grey;
-    height: fit-content;
-    width: 1000px;
-    color: white;
+    background-color: lightgray;
+    height: 1000px;
+    width: 500px;
+    color: black;
     justify-content: center;
     text-align: center;
+    font: bold;
 }
