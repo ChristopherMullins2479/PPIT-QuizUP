@@ -33,11 +33,15 @@
 }
 
 .footer{
-    background: rgb(44, 44, 221);
+    background: rgb(22, 22, 22);
     font-family:fantasy;
     font-size: 25px;
     color: white;
     text-align: center;
     text-shadow: blue;
+    vertical-align: bottom;
 }
 
+.background{
+    height: 1500px;
+}

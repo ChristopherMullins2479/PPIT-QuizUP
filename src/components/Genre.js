@@ -1,11 +1,12 @@
 import React, { Component} from 'react';
+import CommingSoon from '../assets/ComingSoon.png'
 
 class Genre extends Component
 {
     render(){
         return(
             <div>
-                <h1>This is my Genres component.</h1>
+                <img src={CommingSoon} alt="Logo"></img>
             </div>
         );
     }

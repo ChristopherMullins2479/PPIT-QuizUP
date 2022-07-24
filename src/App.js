@@ -15,7 +15,6 @@ import {
   Route
 } from "react-router-dom";
 import Info from './components/Info';
-import Create from './components/Scores';
 import logo from './assets/Logo.png'
 
 class App extends Component {
@@ -23,7 +22,7 @@ class App extends Component {
     return (
       <Router>
       <div className="App">
-        <Navbar bg="primary" variant="light">
+        <Navbar class bg="dark" variant="dark">
           <Container>
             <Navbar.Brand href="/"><img src={logo} alt="Logo"></img></Navbar.Brand>
             <Nav className="me-auto">
