@@ -2,9 +2,21 @@ import React, { Component, Fragment } from 'react';
 import {Helmet} from 'react-helmet'
 import backGround from '../assets/Quizlybackground.jpg'
 import '../styles/Quizly.css'
+//import 'react-toastify/dist/ReactToastify.css';
 
-function test(){
-    console.log(test);
+function checkAnswer(){
+    alert("answer: ");
+}
+
+function fiftyFifty(){
+    alert("50/50");
+}
+
+function luckyGuess(){
+    let LC = document.querySelector('#tester');
+    LC.style.backgroundColor = 'Red';
+    alert("Lucky Guess");
+    
 }
 class Quiz extends Component
 {
@@ -17,7 +29,7 @@ class Quiz extends Component
                     <div className='questionBox'>
                         <h5 className='question'>Pokemon was released in what year in Europe?</h5>
                         <div className='questionOptionSection'>
-                                <p className='questionOption'>1998</p>
+                                <p id='A' className='questionOption'>1998</p>
                                 <p className='questionOption'>1994</p>
                         </div>
                         <div className='questionOptionSection'>
@@ -26,8 +38,8 @@ class Quiz extends Component
                         </div>
 
                         <div className='questionOptionSection'>
-                            <p className='lifeLineOption'>50/50</p>
-                            <p onClick={test} className='lifeLineOption'>Lucky Guess</p>
+                            <p onClick={fiftyFifty} className='lifeLineOption'>50/50</p>
+                            <p id='tester' onClick={luckyGuess} className='lifeLineOption'>Lucky Guess</p>
                         </div>
                     </div>
                 </div>
