@@ -10,24 +10,18 @@ import { useHistory } from 'react-router-dom';
 
 function Main (){
         return (
-            <div className='background'>
-                <img height={200} width={200} src={logo} alt="Logo"></img>
-                <h1 className='title'>Welcome To Quizly</h1>
+            <div>
+                <div className='background'>
+                    <img height={200} width={200} src={logo} alt="Logo"></img>
+                    <h1 className='title'>Welcome To Quizly</h1>
+                </div>
 
-                {/* <div>
-                        <button className='startButton' onClick={navigateToQuiz}>Start Quiz</button>
-                        <p></p>
-                        <button className='mainMenueButton' onClick={navigateToLeader}>Leaderboard</button>
-                        <p></p>
-                        <button className='mainMenueButton' onClick={navigateToGenre}>Genre</button>
-                </div> */}
-
-                <footer className='footer'>
+                <div>
+                    <footer className='footer'>
                     <p>Arthor: Christopher Mullins</p>
                     <p>Quizly PPIT</p>
-                </footer>
-                
-                
+                    </footer>
+                </div> 
             </div>
         );
     }

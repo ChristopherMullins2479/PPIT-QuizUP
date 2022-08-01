@@ -1,0 +1,162 @@
+[
+    {
+        "question": "What character from the show 'The Office' is maiired to Pam Beasly",
+        "optionA": "Andy Bernard",
+        "optionB": "Dwight Schrute",
+        "optionC": "Ryan Howard",
+        "optionD": "Jim Halpert",
+        "answer": "Jim Halpert"
+    },
+    {
+        "question": "What year was Pokemon Released in Europe?",
+        "optionA": "1996",
+        "optionB": "2002",
+        "optionC": "1991",
+        "optionD": "2006",
+        "answer": "1996"
+    },
+
+    {
+        "question": "Who wrote Julius Caesar, Macbeth and Hamlet?",
+        "optionA": "Wole Soyinka",
+        "optionB": "William Shakespeare",
+        "optionC": "Ngozi Chimamanda Adichie",
+        "optionD": "Dan Brown",
+        "answer": "William Shakespeare"
+    },
+
+    {
+        "question": "What did the crocodile swallow in Peter Pan?",
+        "optionA": "A Book",
+        "optionB": "A Computer",
+        "optionC": "A pair of shoes",
+        "optionD": "Alarm Clock",
+        "answer": "Alarm Clock"
+    },
+
+    {
+        "question": "Which is the only mammal that can’t jump?",
+        "optionA": "Dog",
+        "optionB": "Elephant",
+        "optionC": "Goat",
+        "optionD": "Lion",
+        "answer": "Elephant"
+    },
+
+    {
+        "question": "Who lived at 221B, Baker Street, London ?",
+        "optionA": "Tony Stark",
+        "optionB": "Morgan Freeman",
+        "optionC": "Sherlock Holmes",
+        "optionD": "Samuel L. Jackson",
+        "answer": "Sherlock Holmes"
+    },
+
+    {
+        "question": "What is the most spoken language in the world ?",
+        "optionA": "Hindi",
+        "optionB": "English",
+        "optionC": "Spanish",
+        "optionD": "Mandarin",
+        "answer": "English"
+    },
+
+    {
+        "question": "Where is the smallest bone in the human body ?",
+        "optionA": "The Chest",
+        "optionB": "The Ear",
+        "optionC": "The Legs",
+        "optionD": "The Hands",
+        "answer": "The Ear"
+    },
+
+    {
+        "question": "What does the roman numeral C represent ?",
+        "optionA": "100",
+        "optionB": "10",
+        "optionC": "10,000",
+        "optionD": "1,000,000",
+        "answer": "100"
+    },
+
+    {
+        "question": "What takes place in Hong Kong's Happy Valley ?",
+        "optionA": "F1",
+        "optionB": "Horse racing",
+        "optionC": "Running",
+        "optionD": "Bike Racing",
+        "answer": "Horse racing"
+    },
+
+    {
+        "question": "What year was The United Nations formed ?",
+        "optionA": "1930",
+        "optionB": "1925",
+        "optionC": "1945",
+        "optionD": "1950",
+        "answer": "1945"
+    },
+
+    {
+        "question": "Mixing Blue and Yellow makes what colour ?",
+        "optionA": "Green",
+        "optionB": "Brown",
+        "optionC": "Purple",
+        "optionD": "Orange",
+        "answer": "Green"
+    },
+
+    {
+        "question": "What’s the capital of Ireland ?",
+        "optionA": "Dublin",
+        "optionB": "Cork",
+        "optionC": "Limrick",
+        "optionD": "Belfast",
+        "answer": "Dublin"
+    },
+
+    {
+        "question": "How many squares are there on a Standard chess board ?",
+        "optionA": "128",
+        "optionB": "64",
+        "optionC": "32",
+        "optionD": "256",
+        "answer": "64"
+    },
+
+    {
+        "question": "Gunter owns a coffee shop in what US sitcom ?",
+        "optionA": "The Office",
+        "optionB": "Friends",
+        "optionC": "Big Bang Theory",
+        "optionD": "How I met your mother",
+        "answer": "Friends"
+    },
+
+    {
+        "question": "Which of these is a test for Colour Blindness ?",
+        "optionA": "Ishihara test",
+        "optionB": "Rorshach test",
+        "optionC": "Bleep test",
+        "optionD": "Turning test",
+        "answer": "Ishihara test"
+    },
+
+    {
+        "question": "How many minutes are there in a week ?",
+        "optionA": "1,800",
+        "optionB": "10,080",
+        "optionC": "100,800",
+        "optionD": "18,000",
+        "answer": "10,080"
+    },
+
+    {
+        "question": "What is a Blue Tongue Skink ?",
+        "optionA": "A Lizard",
+        "optionB": "A Fish",
+        "optionC": "A Bird",
+        "optionD": "A Snake",
+        "answer": "A Lizard"
+    }
+]

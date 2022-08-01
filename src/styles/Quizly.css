@@ -1,0 +1,114 @@
+.startButton{
+    background-color: green;
+    height: 150px;
+    width: 500px;
+    text-align: center;
+    color: white;
+    border-radius: 30%;
+    font-size: 75px;
+}
+
+.mainMenueButton{
+    background-color: lightseagreen;
+    height: 150px;
+    width: 500px;
+    text-align: center;
+    color: white;
+    border-radius: 30%;
+    font-size: 75px;
+}
+
+.background{
+    background-image: url(../assets/Quizlybackground.jpg);
+    height: auto;
+    width: auto;
+}
+
+.title{
+    font-family:fantasy;
+    font-size: 75px;
+    color: white;
+    text-align: center;
+    text-shadow: blue;
+}
+
+.footer{
+    background: rgb(22, 22, 22);
+    font-family:fantasy;
+    font-size: 25px;
+    color: white;
+    text-align: center;
+    text-shadow: blue;
+    vertical-align: bottom;
+}
+
+.background{
+    height: 1500px;
+}
+
+.questionBox{
+    background-color: rgb(209, 195, 195);
+    width: 1000px;
+    height: 300px;
+    border: 5px solid black;
+}
+
+.question{
+    font-family:fantasy;
+    background-color: whitesmoke;
+    height: 80px;
+    color: black;
+    border: 5px solid black;
+    text-align: center;
+    text-shadow: blue;
+}
+
+.questionText{
+    font-family:fantasy;
+    background-color: whitesmoke;
+    height: 30px;
+    color: black;
+    border: 5px solid black;
+    text-align: center;
+    text-shadow: blue;
+}
+
+.questionNumberSection{
+    font-family:fantasy;
+    color: black;
+    text-align: center;
+    text-shadow: blue;
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+    height: 100px;
+}
+
+.questionOption{
+    background-color: grey;
+    border: 5px solid black;
+    font-family:fantasy;
+    color: white;
+    text-align: center;
+    border-radius: 10%;
+    justify-content: center;
+    width: 400px;
+}
+
+.questionOptionSection{
+    display: flex;
+    justify-content: center;
+}
+
+.lifeLineOption{
+    background-color: darkgreen;
+    border: 5px solid black;
+    font-family:fantasy;
+    color: white;
+    text-align: center;
+    border-radius: 10%;
+    justify-content: center;
+    width: 200px;
+}
+
+
