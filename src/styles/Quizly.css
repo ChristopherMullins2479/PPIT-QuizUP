@@ -63,6 +63,27 @@
     text-shadow: blue;
 }
 
+.questionText{
+    font-family:fantasy;
+    background-color: whitesmoke;
+    height: 30px;
+    color: black;
+    border: 5px solid black;
+    text-align: center;
+    text-shadow: blue;
+}
+
+.questionNumberSection{
+    font-family:fantasy;
+    color: black;
+    text-align: center;
+    text-shadow: blue;
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+    height: 100px;
+}
+
 .questionOption{
     background-color: grey;
     border: 5px solid black;

@@ -20,7 +20,7 @@ function Main (){
                     <footer className='footer'>
                     <p>Arthor: Christopher Mullins</p>
                     <p>Quizly PPIT</p>
-                </footer>
+                    </footer>
                 </div> 
             </div>
         );
