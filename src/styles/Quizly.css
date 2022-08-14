@@ -73,6 +73,17 @@
     text-shadow: blue;
 }
 
+.scoreText{
+    font-family:fantasy;
+    background-color: whitesmoke;
+    height: 30px;
+    color: black;
+    border: 5px solid black;
+    text-align: center;
+    text-shadow: blue;
+    padding: 500;
+}
+
 .questionNumberSection{
     font-family:fantasy;
     color: black;

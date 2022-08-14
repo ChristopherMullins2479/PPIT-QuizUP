@@ -5,92 +5,15 @@ import '../styles/Quizly.css'
 //import 'react-toastify/dist/ReactToastify.css';
 import questionsData from '../questions.json'
 import isEmpty from '../utils/isEmpty';
+import { wait } from '@testing-library/react';
 
 //variables 
 var luckyGuessUsed = false;
 var fiftyFiftyUsed = false;
+var numberOfRounds = 10;
 
 var activeAnswer;
 
-
-function checkAnswerA(){
-    //alert("answer: A");
-    let answerA =  document.querySelector('#answerA');
-    let A = answerA.textContent;
-    checkAnswer(A);
-}
-
-function checkAnswerB(){
-    //alert("answer: B");
-    let answerB =  document.querySelector('#answerB');
-    let B = answerB.textContent;
-    checkAnswer(B);
-}
-
-function checkAnswerC(){
-    //alert("answer: C");
-    let answerC =  document.querySelector('#answerC');
-    let C = answerC.textContent;
-    checkAnswer(C);
-}
-
-function checkAnswerD(){
-    //alert("answer: D");
-    let answerD =  document.querySelector('#answerD');
-    let D = answerD.textContent;
-    checkAnswer(D);
-}
-
-function checkAnswer(ans){
-    let rightAnswer =  document.querySelector('#activeRightAnswer');
-    let rightAnswerText = rightAnswer.textContent;
-
-    if(ans == rightAnswerText){
-        alert("right");
-    }
-    else{
-        alert("wrong");
-    }
-    //alert(ans+" "+rightAnswerText);
-}
-
-/*
-50/50 pressed
-will then only alow the life line to be used once
-when red the life line is not avaibable
-*/
-function fiftyFifty(){
-    if(fiftyFiftyUsed == false){
-        let FF = document.querySelector('#fiftyFiftyID');
-        FF.style.backgroundColor = 'Red';
-        alert("Fifty Fifty");
-        fiftyFiftyUsed = true;
-    }
-    else{
-        alert("50/50 Used");
-    } 
-}
-
-/*
-Lucky Guess pressed
-will then only alow the life line to be used once
-when red the life line is not avaibable
-*/
-function luckyGuess(){
-    if(luckyGuessUsed == false){
-        let LC = document.querySelector('#answerA');
-        LC.style.backgroundColor = 'Red';
-        alert("Lucky Guess");
-        let ra = document.querySelector('#answerA')
-        
-        //sets button invisable
-        ra.style.visibility = "hidden";
-        luckyGuessUsed = true;
-    }
-    else{
-        alert("Lucky Guess Used");
-    } 
-}
 class Quiz extends Component
 {
     constructor (props){
@@ -103,14 +26,16 @@ class Quiz extends Component
             answer: '',
             numOfQuestions:0,
             numOfQuestionsAnswered: 0,
-            activeQuestionIndex: 16,
-            score: 0
-        };
+            activeQuestionIndex: 0,
+            score: 0,
+            lives: 5
+        }
     }
 
     //will call when component loads
     componentDidMount(){
         const {questionsData, activeQuestion, nextQuestion, previousQuestion, answer} = this.state;
+        //this.playRound();
         this.callQuestions(questionsData, activeQuestion, nextQuestion, previousQuestion);
         activeAnswer = answer; 
     }
@@ -133,6 +58,143 @@ class Quiz extends Component
             });
         }
     };
+
+    // playRound = () => {
+    //     let counter = 1;
+    //     while(counter <= numberOfRounds){
+    //         console.log("Round: "+counter);
+    //         counter ++;
+    //     }
+    // }
+
+    checkAnswerA = () => {
+        //alert("answer: A");
+        let answerA =  document.querySelector('#answerA');
+        let A = answerA.textContent;
+        this.checkAnswer(A,answerA);
+    }
+    
+    checkAnswerB = () => {
+        //alert("answer: B");
+        let answerB =  document.querySelector('#answerB');
+        let B = answerB.textContent;
+        this.checkAnswer(B,answerB);
+    }
+    
+    checkAnswerC = () => {
+        //alert("answer: C");
+        let answerC =  document.querySelector('#answerC');
+        let C = answerC.textContent;
+        this.checkAnswer(C,answerC);
+    }
+    
+    checkAnswerD = () => {
+        //alert("answer: D");
+        let answerD =  document.querySelector('#answerD');
+        let D = answerD.textContent;
+        this.checkAnswer(D,answerD);
+    }
+    
+    checkAnswer = (ans,answerBox) => {
+        let rightAnswer =  document.querySelector('#activeRightAnswer');
+        let rightAnswerText = rightAnswer.textContent;
+    
+        if(ans == rightAnswerText){
+            answerBox.style.backgroundColor = 'green';
+            this.setState(lastState =>({
+                score: lastState.score +1,
+                activeQuestionIndex: lastState.activeQuestionIndex +1,
+                numOfQuestionsAnswered: lastState.numOfQuestionsAnswered +1
+            }), () =>{
+                //this.callQuestions(this.state.questionsData, this.state.activeQuestion, this.state.nextQuestion, this.state.previousQuestion);
+                setTimeout(() => {this.callQuestions(this.state.questionsData, this.state.activeQuestion, this.state.nextQuestion, this.state.previousQuestion); this.reset(); }, 500);
+                //this.reset();
+            });
+        }
+        else{
+            answerBox.style.backgroundColor = 'red';
+            this.setState(lastState =>({
+                lives: lastState.lives -1
+            }), () =>{
+                
+            });
+            
+        }
+        //alert(ans+" "+rightAnswerText);
+    }
+
+    reset(answerbox){
+        let A =  document.querySelector('#answerA');
+        let B =  document.querySelector('#answerB');
+        let C =  document.querySelector('#answerC');
+        let D =  document.querySelector('#answerD');
+
+        A.style.backgroundColor = 'gray';
+        B.style.backgroundColor = 'gray';
+        C.style.backgroundColor = 'gray';
+        D.style.backgroundColor = 'gray';
+
+        A.style.visibility = 'visible';
+        B.style.visibility = 'visible';
+        C.style.visibility = 'visible';
+        D.style.visibility = 'visible';
+        
+    }
+    
+    /*
+    50/50 pressed
+    will then only alow the life line to be used once
+    when red the life line is not avaibable
+    */
+    fiftyFifty = () => {
+        if(fiftyFiftyUsed == false){
+            let FF = document.querySelector('#fiftyFiftyID');
+            FF.style.backgroundColor = 'Red';
+            alert("Fifty Fifty");
+            fiftyFiftyUsed = true;
+        }
+        else{
+            alert("50/50 Used");
+        } 
+    }
+    
+    /*
+    Lucky Guess pressed
+    will then only alow the life line to be used once
+    when red the life line is not avaibable
+    */
+    luckyGuess = () => {
+        if(luckyGuessUsed == false){
+            let raA = document.querySelector('#answerA');
+            let raB = document.querySelector('#answerB');
+            let raC = document.querySelector('#answerC');
+            let raD = document.querySelector('#answerD');
+            let rightAnswer =  document.querySelector('#activeRightAnswer');
+            let rightAnswerText = rightAnswer.textContent;
+    
+            if(raA.textContent != rightAnswerText){
+                raA.style.visibility = "hidden";
+            }
+            if(raB.textContent != rightAnswerText){
+                raB.style.visibility = "hidden";
+            }
+            if(raC.textContent != rightAnswerText){
+                raC.style.visibility = "hidden";
+            }
+            if(raD.textContent != rightAnswerText){
+                raD.style.visibility = "hidden";
+            }
+    
+            let LC = document.querySelector('#luckyGuessID');
+            LC.style.backgroundColor = 'Red';
+            alert("Lucky Guess");
+            luckyGuessUsed = true;
+        }
+        else{
+            alert("Lucky Guess Used");
+        } 
+    }
+    
     render(){
         const {activeQuestion} = this.state;
         const questionNumber = this.state.activeQuestionIndex + 1;
@@ -143,20 +205,22 @@ class Quiz extends Component
                 <Helmet><h1 className='title'>Quizly</h1></Helmet>
                 <div className='questionOptionSection'>
                     <div className='questionBox'>
-                        <h6 className='questionText'>Question : {questionNumber}</h6>
+                        <h6 className='questionText'>Question : {activeQuestion.questionIndex}</h6>
                         <h5 className='question'>{activeQuestion.question}</h5>
                         <div className='questionOptionSection'>
-                                <p id='answerA' onClick={checkAnswerA} className='questionOption'>{activeQuestion.optionA}</p>
-                                <p id='answerB' onClick={checkAnswerB} className='questionOption'>{activeQuestion.optionB}</p>
+                                <p id='answerA' onClick={this.checkAnswerA} className='questionOption'>{activeQuestion.optionA}</p>
+                                <p id='answerB' onClick={this.checkAnswerB} className='questionOption'>{activeQuestion.optionB}</p>
                         </div>
                         <div className='questionOptionSection'>
-                            <p id='answerC' onClick={checkAnswerC} className='questionOption'>{activeQuestion.optionC}</p>
-                            <p id='answerD' onClick={checkAnswerD} className='questionOption'>{activeQuestion.optionD}</p>
+                            <p id='answerC' onClick={this.checkAnswerC} className='questionOption'>{activeQuestion.optionC}</p>
+                            <p id='answerD' onClick={this.checkAnswerD} className='questionOption'>{activeQuestion.optionD}</p>
                         </div>
 
                         <div className='questionOptionSection'>
-                            <p id='fiftyFiftyID' onClick={fiftyFifty} className='lifeLineOption'>50/50</p>
-                            <p id='luckyGuessID'  onClick={luckyGuess} className='lifeLineOption'>Lucky Guess</p>
+                            <h6 className='scoreText'>Lives: {this.state.lives}</h6>
+                            <p id='fiftyFiftyID' onClick={this.fiftyFifty} className='lifeLineOption'>50/50</p>
+                            <p id='luckyGuessID'  onClick={this.luckyGuess} className='lifeLineOption'>Lucky Guess</p>
+                            <h6 className='scoreText'>Score: {this.state.score}</h6>
                         </div>
                     </div>
                 </div>
@@ -164,10 +228,10 @@ class Quiz extends Component
 
             <div>
                 <footer className='footer'>
-                <p>Arthor: Christopher Mullins</p>
+                <p>Author: Christopher Mullins</p>
                 <p>Quizly PPIT</p>
             </footer>
-            <label id='activeRightAnswer'>{activeQuestion.answer}</label>
+            <label hidden id='activeRightAnswer'>{activeQuestion.answer}</label>
             </div> 
         </div>
         );
