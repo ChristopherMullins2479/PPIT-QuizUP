@@ -3,14 +3,15 @@ import {Helmet} from 'react-helmet'
 import backGround from '../assets/Quizlybackground.jpg'
 import '../styles/Quizly.css'
 //import 'react-toastify/dist/ReactToastify.css';
-import questionsData from '../questions.json'
+import questionsData from '../data/questions.json'
 import isEmpty from '../utils/isEmpty';
-import { wait } from '@testing-library/react';
+import leaderBoard from '../data/leaderBoard.json'
 
 //variables 
 var luckyGuessUsed = false;
 var fiftyFiftyUsed = false;
 var numberOfRounds = 10;
+var name = "";
 
 var activeAnswer;
 
@@ -37,7 +38,12 @@ class Quiz extends Component
         const {questionsData, activeQuestion, nextQuestion, previousQuestion, answer} = this.state;
         //this.playRound();
         this.callQuestions(questionsData, activeQuestion, nextQuestion, previousQuestion);
-        activeAnswer = answer; 
+        activeAnswer = answer;
+        let gb = document.querySelector('#gameoverBox'); 
+        gb.style.visibility = "hidden";
+
+        let save =  document.querySelector('#savedMessage');
+        save.style.visibility = 'hidden';
     }
     //will cann questions from the question array
     callQuestions = (questionsData = this.state.questionsData, activeQuestion, nextQuestion, previousQuestion) => {
@@ -116,6 +122,9 @@ class Quiz extends Component
             this.setState(lastState =>({
                 lives: lastState.lives -1
             }), () =>{
+                if(this.state.lives < 0){
+                    this.gameover();
+                }
                 
             });
             
@@ -138,6 +147,25 @@ class Quiz extends Component
         B.style.visibility = 'visible';
         C.style.visibility = 'visible';
         D.style.visibility = 'visible';
+        
+    }
+
+    gameover(){
+        let gb = document.querySelector('#gameoverBox'); 
+        gb.style.visibility = "visible";
+
+        let qb = document.querySelector('#questionBox'); 
+        qb.style.visibility = "hidden";
+
+        let A =  document.querySelector('#answerA');
+        let B =  document.querySelector('#answerB');
+        let C =  document.querySelector('#answerC');
+        let D =  document.querySelector('#answerD');
+
+        A.style.visibility = 'hidden';
+        B.style.visibility = 'hidden';
+        C.style.visibility = 'hidden';
+        D.style.visibility = 'hidden';
         
     }
     
@@ -194,6 +222,22 @@ class Quiz extends Component
             alert("Lucky Guess Used");
         } 
     }
+
+    saveScore(){
+        const fs = require('fs');
+
+        let save =  document.querySelector('#savedMessage');
+        save.style.visibility = 'visible';
+
+        let name = document.getElementById('userName').value;
+        let score = document.getElementById('score').textContent;
+        
+        const savedScore = {
+            "name": name,
+            "score": score
+         };
+
+    }
     
     render(){
         const {activeQuestion} = this.state;
@@ -203,8 +247,8 @@ class Quiz extends Component
             <div className='background'>
             <Fragment>
                 <Helmet><h1 className='title'>Quizly</h1></Helmet>
-                <div className='questionOptionSection'>
-                    <div className='questionBox'>
+                <div id='questionBox' className='questionOptionSection'>
+                    <div id='questionBoxOptions' className='questionBox'>
                         <h6 className='questionText'>Question : {activeQuestion.questionIndex}</h6>
                         <h5 className='question'>{activeQuestion.question}</h5>
                         <div className='questionOptionSection'>
@@ -225,13 +269,25 @@ class Quiz extends Component
                     </div>
                 </div>
             </Fragment>
+            <div id='gameoverBox' className='questionOptionSection'>
+                <div className='questionBox'>
+                    <h2>Game Over</h2>
+                    <h4>You Scored: <h4 id='score'>{this.state.score}</h4></h4>
+                    <label>Enter Your Name: </label>
+                    <input id='userName'></input>
+                    <p></p>
+                    <button onClick={this.saveScore}>Save and Exit</button>
+                    <p></p>
+                    <h5 id='savedMessage'>Score Saved Please Press Home</h5>
+                </div>
+            </div>
 
             <div>
                 <footer className='footer'>
                 <p>Author: Christopher Mullins</p>
                 <p>Quizly PPIT</p>
             </footer>
-            <label hidden id='activeRightAnswer'>{activeQuestion.answer}</label>
+            <label id='activeRightAnswer'>{activeQuestion.answer}</label>
             </div> 
         </div>
         );
