@@ -3519,7 +3519,7 @@ cliui@^6.0.0:
 
 clsx@^1.1.1:
   version "1.2.1"
-  resolved "https://registry.yarnpkg.com/clsx/-/clsx-1.2.1.tgz#0ddc4a20a549b59c93a4116bb26f5294ca17dc12"
+  resolved "https://registry.npmjs.org/clsx/-/clsx-1.2.1.tgz"
   integrity sha512-EcR6r5a8bj6pu3ycsa/E/cKVGuTgZJZdsyUYHOksG/UHIiKfjxzRxYJpyVBwYaQeOvghal9fcc4PidlgzugAQg==
 
 co@^4.6.0:
@@ -9452,7 +9452,7 @@ react-error-overlay@^6.0.9:
 
 react-fast-compare@^3.1.1:
   version "3.2.0"
-  resolved "https://registry.yarnpkg.com/react-fast-compare/-/react-fast-compare-3.2.0.tgz#641a9da81b6a6320f270e89724fb45a0b39e43bb"
+  resolved "https://registry.npmjs.org/react-fast-compare/-/react-fast-compare-3.2.0.tgz"
   integrity sha512-rtGImPZ0YyLrscKI9xTpV8psd6I8VAtjKCzQDlzyDvqJA8XOW78TXYQwNRNd8g8JZnDu8q9Fu/1v4HPAVwVdHA==
 
 react-file-reader@^1.1.4:
@@ -9465,7 +9465,7 @@ react-file-reader@^1.1.4:
 
 react-helmet@^6.1.0:
   version "6.1.0"
-  resolved "https://registry.yarnpkg.com/react-helmet/-/react-helmet-6.1.0.tgz#a750d5165cb13cf213e44747502652e794468726"
+  resolved "https://registry.npmjs.org/react-helmet/-/react-helmet-6.1.0.tgz"
   integrity sha512-4uMzEY9nlDlgxr61NL3XbKRy1hEkXmKNXhjbAIOVw5vcFrsdYbH2FEwcNyWvWinl103nXgzYNlns9ca+8kFiWw==
   dependencies:
     object-assign "^4.1.1"
@@ -9597,13 +9597,13 @@ react-scripts@4.0.3:
 
 react-side-effect@^2.1.0:
   version "2.1.2"
-  resolved "https://registry.yarnpkg.com/react-side-effect/-/react-side-effect-2.1.2.tgz#dc6345b9e8f9906dc2eeb68700b615e0b4fe752a"
+  resolved "https://registry.npmjs.org/react-side-effect/-/react-side-effect-2.1.2.tgz"
   integrity sha512-PVjOcvVOyIILrYoyGEpDN3vmYNLdy1CajSFNt4TDsVQC5KpTijDvWVoR+/7Rz2xT978D8/ZtFceXxzsPwZEDvw==
 
 react-toastify@^9.0.7:
-  version "9.0.7"
-  resolved "https://registry.yarnpkg.com/react-toastify/-/react-toastify-9.0.7.tgz#4e6c6e1ae66eb587accc4a7704fb76ff88ab23eb"
-  integrity sha512-UG5P/2F/fYdbK+v3XRWHM6xfMkWeLM+k2swKvwU8oO9DXx31GkeoH7Z6slBTkavZ0VjoQ+n/YD6xOBqEwN7HRg==
+  version "9.0.8"
+  resolved "https://registry.npmjs.org/react-toastify/-/react-toastify-9.0.8.tgz"
+  integrity sha512-EwM+teWt49HSHx+67qI08yLAW1zAsBxCXLCsUfxHYv1W7/R3ZLhrqKalh7j+kjgPna1h5LQMSMwns4tB4ww2yQ==
   dependencies:
     clsx "^1.1.1"
 
@@ -9624,6 +9624,11 @@ react@^17.0.2:
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
+
+reactjs-popup@^2.0.5:
+  version "2.0.5"
+  resolved "https://registry.npmjs.org/reactjs-popup/-/reactjs-popup-2.0.5.tgz"
+  integrity sha512-b5hv9a6aGsHEHXFAgPO5s1Jw1eSkopueyUVxQewGdLgqk2eW0IVXZrPRpHR629YcgIpC2oxtX8OOZ8a7bQJbxA==
 
 read-pkg-up@^3.0.0:
   version "3.0.0"
