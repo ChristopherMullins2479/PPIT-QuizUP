@@ -29,7 +29,7 @@ class Quiz extends Component
             numOfQuestionsAnswered: 0,
             activeQuestionIndex: 0,
             score: 0,
-            lives: 5
+            lives: 3
         }
     }
 
