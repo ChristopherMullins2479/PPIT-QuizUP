@@ -28,7 +28,6 @@ class App extends Component {
             <Nav className="me-auto">
               <Nav.Link href="/">Main</Nav.Link>
               <Nav.Link href="/quiz">Start</Nav.Link>
-              <Nav.Link href="/scores">Scores</Nav.Link>
               <Nav.Link href="/genre">Genre</Nav.Link>
               <Nav.Link href="/info">Info</Nav.Link>
             </Nav>

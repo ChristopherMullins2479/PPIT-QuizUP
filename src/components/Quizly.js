@@ -112,6 +112,10 @@ class Quiz extends Component
                 activeQuestionIndex: lastState.activeQuestionIndex +1,
                 numOfQuestionsAnswered: lastState.numOfQuestionsAnswered +1
             }), () =>{
+                console.log(this.state.score);
+                if(this.state.score >= 30){
+                    this.gameover();  
+                }
                 //this.callQuestions(this.state.questionsData, this.state.activeQuestion, this.state.nextQuestion, this.state.previousQuestion);
                 setTimeout(() => {this.callQuestions(this.state.questionsData, this.state.activeQuestion, this.state.nextQuestion, this.state.previousQuestion); this.reset(); }, 500);
                 //this.reset();
@@ -120,7 +124,8 @@ class Quiz extends Component
         else{
             answerBox.style.backgroundColor = 'red';
             this.setState(lastState =>({
-                lives: lastState.lives -1
+                lives: lastState.lives -1,
+                score: lastState.score -1,
             }), () =>{
                 if(this.state.lives < 0){
                     this.gameover();
@@ -176,15 +181,47 @@ class Quiz extends Component
     */
     fiftyFifty = () => {
         if(fiftyFiftyUsed == false){
+            let raA = document.querySelector('#answerA');
+            let raB = document.querySelector('#answerB');
+            let raC = document.querySelector('#answerC');
+            let raD = document.querySelector('#answerD');
+            let rightAnswer =  document.querySelector('#activeRightAnswer');
+            let rightAnswerText = rightAnswer.textContent;
+            let i = 0;
+    
+            for(i = 0; i < 3; i++){
+                if(raA.textContent != rightAnswerText){
+                    raA.style.visibility = "hidden";
+                    raA.textContent = rightAnswerText;
+                    console.log(i);
+                    
+                }
+                else if(raB.textContent != rightAnswerText){
+                    raB.style.visibility = "hidden";
+                    console.log(i);
+                    
+                }
+                else if(raC.textContent != rightAnswerText){
+                    raC.style.visibility = "hidden";
+                    console.log(i);
+                    
+                }
+                else if(raD.textContent != rightAnswerText){
+                    raD.style.visibility = "hidden";
+                    console.log(i);
+                    
+                }
+            }
+               
+            
+            
+    
             let FF = document.querySelector('#fiftyFiftyID');
             FF.style.backgroundColor = 'Red';
-            alert("Fifty Fifty");
+            alert("50/50");
             fiftyFiftyUsed = true;
-        }
-        else{
-            alert("50/50 Used");
-        } 
     }
+}
     
     /*
     Lucky Guess pressed
